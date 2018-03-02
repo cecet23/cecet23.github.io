@@ -1,0 +1,51 @@
+# Build settings
+permalink: /notes/:year/:title/
+markdown: kramdown
+highlighter: pygments
+plugins: [jekyll-paginate]
+
+paginate: 3
+paginate_path: "/notes/page/:num/"
+comments: true
+
+source: source
+destination: _site
+sass:
+  sass_dir: _sass
+  style: compressed # expanded
+
+# SEO settings
+title: Piero Tenace
+description: "My personal web site"
+keywords: "Piero, Tenace, personal, SEO, notes, web"
+url: http://cecet23.github.io
+baseurl: ""
+
+google_analytics: UA-52446115-1
+repo: http://github.com/cecet23/cecet23.github.io
+disqus_shortname: "pierotemace"
+disqus_site_shortname: "pierotenace"
+
+# Author settings
+author:
+  name: Piero Tenace 
+  job: System and Software Engineer
+  bio: "I'm from the wonderful Perugia, Italy and I do stuff with computers. <br>"
+  thumb: /images/author.png
+  email: piero.tenace@gmail.com
+  url: pierotenace.com
+  github: https://github.com/cecet23
+  twitter: https://twitter.com/cecet23
+  instagram: https://www.instagram.com/cecet23/
+  linkedin: https://linkedin.com/in/pierotenace
+
+# navbar pages
+navbar:
+  #- slug: about
+   # title: About
+  #- slug: icons
+  #  title: Icons
+  - slug: notes
+    title: notes
+
+exclude: ["config.rb", "src", "Gemfile", "Gemfile.lock", "package.json","README.md", "Rakefile"]
