@@ -3,6 +3,7 @@ require "rubygems"
 require "tmpdir"
 require "bundler/setup"
 require "jekyll"
+require "bourbon"
 
 # Change your GitHub reponame
 GITHUB_REPONAME = "cecet23/cecet23.github.io"
