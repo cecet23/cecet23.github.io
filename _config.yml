@@ -1,7 +1,7 @@
 # Build settings
 permalink: /notes/:year/:title/
 markdown: kramdown
-highlighter: pygments
+highlighter: pygments.py
 plugins: [jekyll-paginate]
 
 paginate: 3
