@@ -18,12 +18,12 @@ sass:
 title: Piero Tenace
 description: "My personal web site"
 keywords: "Piero, Tenace, personal, SEO, notes, web"
-url: http://cecet23.github.io
+url: http://pierotenace.com
 baseurl: ""
 
 google_analytics: UA-52446115-1
 repo: http://github.com/cecet23/cecet23.github.io
-disqus_shortname: "pierotemace"
+disqus_shortname: "pierotenace"
 disqus_site_shortname: "pierotenace"
 
 # Author settings
