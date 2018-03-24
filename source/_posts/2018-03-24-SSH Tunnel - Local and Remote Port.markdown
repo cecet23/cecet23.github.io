@@ -8,10 +8,10 @@ categories:
 layout: post
 ---
 
-magine you’re on a private network which doesn’t allow connections to a specific server. Let’s say you’re at work and imgur.com is being blocked. To get around this we can create a tunnel through a server which isn’t on our network and remote server.
+Imagine you’re on a private network or the remote network  doesn’t allow connections on a specific server on a specific port. To get around this we can create a tunnel from local connection to remote  server which isn’t on our network.
 {% highlight shell_session %}
 ssh user@remoteserver -L localport:locahost:remoteport
 {% endhighlight %}
 
-The key here is -L which says we’re doing local port forwarding. Then it says we’re forwarding our local port  to remoteport, which is the default port for HTTP. Now open your browser and go to http://localhost:localport.
+The key here is -L which says we’re doing local port forwarding. Then it says we’re forwarding our local port  to remoteport. Now open your browser and go to http://localhost:localport.
 
