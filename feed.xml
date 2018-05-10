@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Piero Tenace</title>
+    <description>My personal web site</description>
+    <link>http://pierotenace.com/</link>
+    <atom:link href="http://pierotenace.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 10 May 2018 16:54:15 +0200</pubDate>
+    <lastBuildDate>Thu, 10 May 2018 16:54:15 +0200</lastBuildDate>
+    <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>Errore di autenticazione</title>
+        <description>&lt;p&gt;Se provate a connettervi in remoto su una macchina  e ricevete “errore di autenticazione”.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;La causa potrebbe essere la Correzione crittografia Oracle per CredSSP.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Potete provare a risolvere aggiungendo una chiave sul registro e riavviare il pc. Nella fattispecie:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters] 
+&amp;quot;AllowEncryptionOracle&amp;quot;=dword:00000002&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Thu, 10 May 2018 14:07:24 +0200</pubDate>
+        <link>http://pierotenace.com/notes/2018/Errore-di-autenticazione/</link>
+        <guid isPermaLink="true">http://pierotenace.com/notes/2018/Errore-di-autenticazione/</guid>
+        
+        
+        <category>CredSSP</category>
+        
+        <category>Oracle</category>
+        
+        <category>autenticazione</category>
+        
+      </item>
+    
+      <item>
+        <title>SSH Tunnel - Local and Remote Port!</title>
+        <description>&lt;p&gt;Imagine you’re on a private network or the remote network  doesn’t allow connections on a specific server on a specific port. To get around this we can create a tunnel from local connection to remote  server which isn’t on our network.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;ssh user@remoteserver -L localport:locahost:remoteport&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The key here is -L which says we’re doing local port forwarding. Then it says we’re forwarding our local port  to remoteport. Now open your browser and go to http://localhost:localport.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 24 Mar 2018 13:07:24 +0100</pubDate>
+        <link>http://pierotenace.com/notes/2018/SSH-Tunnel-Local-and-Remote-Port/</link>
+        <guid isPermaLink="true">http://pierotenace.com/notes/2018/SSH-Tunnel-Local-and-Remote-Port/</guid>
+        
+        
+        <category>ssh</category>
+        
+        <category>local</category>
+        
+        <category>remote</category>
+        
+      </item>
+    
+      <item>
+        <title>Liquid Exception Exec format error</title>
+        <description>&lt;p&gt;if you receive an error like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;Liquid Exception: Exec format error C:\....&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can try to change inside the file _config.yml the:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;highlighter: pygments&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;to&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;highlighter: pygments.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Wed, 07 Mar 2018 05:22:24 +0100</pubDate>
+        <link>http://pierotenace.com/notes/2018/Liquid-Exception-Exec-format-error/</link>
+        <guid isPermaLink="true">http://pierotenace.com/notes/2018/Liquid-Exception-Exec-format-error/</guid>
+        
+        
+        <category>Openwrt</category>
+        
+      </item>
+    
+      <item>
+        <title>How to use an ntfs' HD on openwrt</title>
+        <description>&lt;p&gt;First of all you have to use usb’s driver. Personally I installed uhci and ohci’s drivers.&lt;/p&gt;
+
+&lt;p&gt;modules for USB 1.1:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;opkg update
+opkg install kmod-usb-uhci
+opkg install kmod-usb-ohci&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;then for usb 2:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;opkg install kmod-usb2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You need to install the usb storage’s module.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;opkg install kmod-usb-storage kmod-usb-storage-extras&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;At least you have to install ntfs-3g package and mount the HD:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;opkg install ntfs-3g
+mkdir /mnt/usb-ntfs
+ntfs-3g /dev/sda1 /mnt/usb-ntfs -o rw,sync&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;if everything went fine you can find your HD on /mnt/usb-ntfs.&lt;/p&gt;
+
+&lt;p&gt;Some other usefull cmd:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;df -h&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;dmesg | grep sd&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;to see if the usb’s driver are load:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;cat /sys/kernel/debug/usb/devices&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;and you will see something like that:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;T:  Bus=03 Lev=01 Prnt=01 Port=01 Cnt=01 Dev#=  2 Spd=5000 MxCh= 0
+D:  Ver= 3.00 Cls=00(&amp;gt;ifc ) Sub=00 Prot=00 MxPS= 9 #Cfgs=  1
+P:  Vendor=0480 ProdID=a200 Rev= 0.00
+S:  Manufacturer=TOSHIBA
+S:  Product=External USB 3.0
+S:  SerialNumber=20150207004253C
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=896mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS=1024 Ivl=0ms&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Mon, 26 Feb 2018 13:07:24 +0100</pubDate>
+        <link>http://pierotenace.com/notes/2018/How-to-use-ntfs-with-OpenWRT/</link>
+        <guid isPermaLink="true">http://pierotenace.com/notes/2018/How-to-use-ntfs-with-OpenWRT/</guid>
+        
+        
+        <category>Openwrt</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello GitHub!</title>
+        <description>&lt;p&gt;Hi there, this is my first post on &lt;a href=&quot;https://pages.github.com/&quot;&gt; github pages&lt;/a&gt;. The tecnology that I used for this webpage. 
+Github pages because you don’t need a database or configure a webserver but just a text editor and git. In my case I used &lt;a href=&quot;http://jekyllrb.com/&quot;&gt; jekyll &lt;/a&gt;that help in html transformation and 
+&lt;a href=&quot;https://github.com/nandomoreirame/end2end&quot;&gt; end2end &lt;/a&gt; theme.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/2MsN8gpT6jY&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Mon, 26 Feb 2018 13:07:24 +0100</pubDate>
+        <link>http://pierotenace.com/notes/2018/Hello-GitHub/</link>
+        <guid isPermaLink="true">http://pierotenace.com/notes/2018/Hello-GitHub/</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>Hello</category>
+        
+        <category>World</category>
+        
+      </item>
+    
+  </channel>
+</rss>
